@@ -1,6 +1,6 @@
 # Proyecto PruebaCovisian
 
-Este proyecto es una aplicación de .NET Core para la gestión de alquileres.
+Este proyecto es una aplicación de .NET Core para la gestión de alquileres de autos, haciendo uso de Entity Framework.
 
 ## Estructura del Proyecto
 
