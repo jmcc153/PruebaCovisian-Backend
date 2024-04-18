@@ -1,0 +1,18 @@
+version: '3.7'
+
+volumes:
+  sqldata:
+
+services:
+  sqlserver:
+      container_name: 'sqlserver'
+      image: 'mcr.microsoft.com/mssql/server:2019-latest'
+      environment:
+        - ACCEPT_EULA=Y
+        - MSSQL_PID=Developer
+        - SA_PASSWORD=#I8xO4qjbxpjXk#F
+      ports:
+        - "1433:1433"
+      #volumes:
+      #  - sqldata:/var/opt/mssql
+      command: /bin/sh -c "(/opt/mssql/bin/sqlservr &) && sleep 10s && /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P '\#I8xO4qjbxpjXk\#F' -d master && sleep infinity"
